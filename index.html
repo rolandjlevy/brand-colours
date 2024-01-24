@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Cromwell colours on Onesite</title>
+</head>
+  
+<body>
+  
+  <main class="content">
+  <h3>Brand colours</h3>
+  <div class="colour-grid" id="brandColourGrid"></div>
+  <hr style="margin: 20px 0;"/>
+  <h3>Other colours</h3>
+  <div class="colour-grid" id="defaultColourGrid"></div>
+  </main>
+
+  <script>
+
+    const brandColours = {
+      orange: '#ff5100',
+      blue: '#1c355e',
+      darkGrey: '#758592',
+      grey: '#d8dfe1',
+      lightGrey: '#f2f2f2',
+      white: '#ffffff',
+    };
+    
+    const defaultColours = {
+      black: '#1e1e1e',
+      deepGrey: '#4a4a4a',
+      midDarkGrey: '#7e7e7e',
+      midGrey: '#aaaaaa',
+      borderGrey: '#c4c4c4',
+      green: '#345920',
+      midGreen: '#4caf50',
+      lightBlue: '#1976d2',
+      red: '#d32f2f',
+    };
+
+    const createColourCell = (colourName, colourValue) => {
+      const cell = document.createElement('div');
+      cell.className = 'colour-cell';
+      cell.style.backgroundColor = colourValue;
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'colour-name';
+      nameSpan.textContent = `${colourName}: ${colourValue}`;
+      cell.appendChild(nameSpan);
+      return cell;
+    }
+
+    const renderColourGrid = (id, colours) => {
+      const grid = document.getElementById(id);
+      Object.entries(colours).forEach(([name, colour]) => {
+        const colourCell = createColourCell(name, colour);
+        grid.appendChild(colourCell);
+      });
+    }
+    renderColourGrid('brandColourGrid', brandColours);
+    renderColourGrid('defaultColourGrid', defaultColours);
+    
+  </script>
+</body>
+</html>
