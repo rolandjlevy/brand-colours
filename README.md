@@ -2,9 +2,8 @@
 
 ### How to run a front-end project in a Codespace
 
-- Terminal > npm i -g http-server
-- Terminal > http-server -c-1
-- click 'Open in Browser' or Forwarded Address link from PORTS tab in Terminal
+- Terminal > npm i -g http-server && http-server -c-1
+- click 'Open in Browser' or from the Terminal click the link Forwarded Address link from PORTS
 
 ### Links
 
